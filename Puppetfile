@@ -19,4 +19,3 @@ mod "puppetlabs/concat",      '2.2.0'
 mod 'splunk',
   :git    => 'https://github.com/dimarra/puppet-splunk.git',
   :branch => 'production'
-  
