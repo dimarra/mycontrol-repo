@@ -29,4 +29,12 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+ 
+  yumrepo { "splunk":
+    baseurl => "http://ip-172-31-28-232.ap-southeast-2.compute.internal/splunk",
+    descr => "Splunk repo",
+    enabled => 1,
+    gpgcheck => 0
+  }
 }
+
