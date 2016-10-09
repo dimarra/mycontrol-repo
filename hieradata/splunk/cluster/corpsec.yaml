@@ -3,17 +3,26 @@ splunk::tcpout: 'ip-172-31-18-136.ap-southeast-2.compute.internal:9997'
 
 splunk::sslcompatibility: 'intermediate'
 
+splunk::webhook: 'intermediate'
+
+
+splunk::replication_port: 9887
+splunk::pass4SymmKey:  superceded
+
 splunk::service:
   enable: true
   ensure: running
   
-splunk::admin
+splunk::admin:
   fn: 'CorpSec Splunk Admin'
   email: 'corpsec@shelde.com'
   hash: '$6$MR9IJFF7RBnVA.k1$/30EBSzy0EJKZ94SjHFIUHjQjO3/P/4tx0JmWCp/En47MJceaXsevhBLE2w/ibjHlAUkD6k0U.PmY/noe9Jok0'
   
-
-
+&clustering_attributes
+  master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
+  replication_factor:  4
+  search_factor:  3
+  pass4SymmKey:  whatever
 
 
 

@@ -1,3 +1,6 @@
 
 splunk::type: searchhead
 
+splunk::clustering:
+  mode: searchhead
+  <<: *clustering_attributes

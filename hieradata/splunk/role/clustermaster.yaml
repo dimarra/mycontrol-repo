@@ -1,6 +1,7 @@
 
-splunk::type: indexer
+splunk::type: clustermaster
 
 splunk::clustering:
-  mode: slave
+  mode: master
   <<: *clustering_attributes
+
