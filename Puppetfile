@@ -19,3 +19,8 @@ mod "puppetlabs/concat",      '2.2.0'
 mod 'splunk',
   :git    => 'https://github.com/dimarra/puppet-splunk.git',
   :branch => 'master'
+
+mod 'cluster_role',
+  :git    => 'https://github.com/dimarra/cluster_role.git',
+  :branch => 'master'
+  
