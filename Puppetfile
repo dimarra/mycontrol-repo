@@ -20,7 +20,6 @@ mod 'selinux',
   :git    => 'https://github.com/voxpupuli/puppet-selinux.git',
   :branch => 'master'
 
-
 mod 'splunk',
   :git    => 'https://github.com/dimarra/puppet-splunk.git',
   :branch => 'master'
@@ -28,4 +27,9 @@ mod 'splunk',
 mod 'cluster_role',
   :git    => 'https://github.com/dimarra/cluster_role.git',
   :branch => 'master'
+
+mod 'cloudera',
+  :git    => 'https://github.com/razorsedge/puppet-cloudera.git',
+  :branch => 'master'
+
   
