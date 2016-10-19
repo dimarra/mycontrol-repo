@@ -36,5 +36,9 @@ node default {
     enabled => 1,
     gpgcheck => 0
   }
+
+  class { 'selinux':
+    mode => 'permissive'
+  }
 }
 
