@@ -16,6 +16,11 @@ mod "puppetlabs/concat",      '2.2.0'
 #  :git    => 'https://github.com/puppetlabs/puppetlabs-apache',
 #  :branch => 'docs_experiment'
 
+mod 'selinux',
+  :git    => 'https://github.com/voxpupuli/puppet-selinux.git',
+  :branch => 'master'
+
+
 mod 'splunk',
   :git    => 'https://github.com/dimarra/puppet-splunk.git',
   :branch => 'master'
