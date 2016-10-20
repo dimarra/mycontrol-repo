@@ -7,7 +7,7 @@ splunk::webhook: 'intermediate'
 splunk::webhooktest: 'intermediate'
 
 splunk::replication_port: 9887
-splunk::pass4SymmKey:  superceded
+splunk::pass4symmkey:  superceded
 
 splunk::service:
   enable: true
@@ -25,7 +25,7 @@ splunk::clustering
   master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
   replication_factor:  4
   search_factor:  3
-  pass4SymmKey:  whatever
+  pass4symmkey:  whatever
 
 
 
