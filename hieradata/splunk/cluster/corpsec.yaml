@@ -21,7 +21,7 @@ splunk::admin:
 splunk::clustering:
   pass4symmkey:  corpsec_symmkey_cluster
   
-&clustering_attributes
+&clustering_attributes:
   master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
   replication_factor:  4
   search_factor:  3
