@@ -19,7 +19,7 @@ splunk::admin:
   hash: '$6$MR9IJFF7RBnVA.k1$/30EBSzy0EJKZ94SjHFIUHjQjO3/P/4tx0JmWCp/En47MJceaXsevhBLE2w/ibjHlAUkD6k0U.PmY/noe9Jok0'
 
 splunk::clustering
-  pass4SymmKey:  corpsec_symmkey_cluster
+  pass4symmkey:  corpsec_symmkey_cluster
   
 &clustering_attributes
   master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
