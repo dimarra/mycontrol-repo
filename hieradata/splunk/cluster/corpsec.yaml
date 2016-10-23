@@ -7,7 +7,7 @@ splunk::webhook: 'intermediate'
 splunk::webhooktest: 'intermediate'
 
 splunk::replication_port: 9887
-splunk::pass4symmkey:  superceded
+#splunk::pass4symmkey:  superceded
 
 #splunk::service:
 #  enable: true
