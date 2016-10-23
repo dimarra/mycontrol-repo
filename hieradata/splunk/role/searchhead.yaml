@@ -1,7 +1,7 @@
 
 splunk::type: searchhead
 
-splunk::clustering:
+splunk::shclustering:
   mode: searchhead
   pass4symmkey:  corpsec_clustering_symmkey
 #  <<: *clustering_attributes
