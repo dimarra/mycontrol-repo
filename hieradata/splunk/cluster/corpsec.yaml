@@ -22,7 +22,7 @@ splunk::pass4symmkey:  cluster_symmkey
 splunk::admin:
   fn: 'CorpSec Splunk Admin'
   email: 'corpsec@shelde.com'
-  hash: '$6$MR9IJFF7RBnVA.k1$/30EBSzy0EJKZ94SjHFIUHjQjO3/P/4tx0JmWCp/En47MJceaXsevhBLE2w/ibjHlAUkD6k0U.PmY/noe9Jok0'
+  hash: '$1$l/4odBwP$fUuCqCL2FodmCb1WmYxAS0'
 
 
 splunk::clustering:
