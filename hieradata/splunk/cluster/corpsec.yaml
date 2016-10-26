@@ -22,6 +22,7 @@ splunk::pass4symmkey:  cluster_symmkey
 splunk::admin:
   fn: 'CorpSec Splunk Admin'
   email: 'corpsec@shelde.com'
+# use 'openssl passwd -1' to generate a hash   
   hash: '$1$l/4odBwP$fUuCqCL2FodmCb1WmYxAS0'
 
 
