@@ -3,4 +3,4 @@ splunk::type: indexer
 
 splunk::clustering:
   mode: slave
-  <<: *clustering_attributes
+#  <<: *clustering_attributes

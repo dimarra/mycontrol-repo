@@ -3,5 +3,6 @@ splunk::type: clustermaster
 
 splunk::clustering:
   mode: master
+  
   <<: *clustering_attributes
 
