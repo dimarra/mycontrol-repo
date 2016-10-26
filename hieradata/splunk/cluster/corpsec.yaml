@@ -39,9 +39,9 @@ splunk::shclustering:
   label: cluster_label
 
 splunk::splunk_home: /app/splunk_corpsec
-splunk::splunk_os_user = corpsecuser
-splunk::splunk_bindip = 1234
-splunk::splunk_db_dir = /var/corpsec_db
+splunk::splunk_os_user: corpsecuser
+splunk::splunk_bindip: 1234
+splunk::splunk_db_dir: /var/corpsec_db
 
 splunk::auth:
   authtype: 'LDAP'
