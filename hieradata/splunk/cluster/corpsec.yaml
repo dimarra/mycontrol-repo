@@ -1,11 +1,17 @@
+#
+# This cluster configuration yaml supercedes setting configured in the roles configuration yaml.
+# The setting indicated here are applied to all members nodes indicated with the cluster fact.
+# 
+#
+
+# All variables in this cluster yaml file indicates the following:
+# he common <name of parameter here> for members of the cluster
+
 splunk::ds:     'ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
 splunk::tcpout: 'ip-172-31-18-136.ap-southeast-2.compute.internal:9997'
 
+
 splunk::sslcompatibility: 'intermediate'
-
-splunk::webhook: 'intermediate'
-splunk::webhooktest: 'intermediate'
-
 splunk::replication_port: 9887
 splunk::pass4symmkey:  cluster_symmkey
 
@@ -18,8 +24,38 @@ splunk::admin:
   email: 'corpsec@shelde.com'
   hash: '$6$MR9IJFF7RBnVA.k1$/30EBSzy0EJKZ94SjHFIUHjQjO3/P/4tx0JmWCp/En47MJceaXsevhBLE2w/ibjHlAUkD6k0U.PmY/noe9Jok0'
 
+
 splunk::clustering:
+# do not indicate the 'mode' in here.  set it in roles yaml.
   pass4symmkey:  corpsec_symmkey_cluster
+  cm: 'ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
+  master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
+  replication_factor:  4
+  search_factor:  3
+  pass4symmkey:  whatever
+  
+splunk::shclustering:
+  shd: ip-172-31-28-232.ap-southeast-2.compute.internal:8089
+  label: cluster_label
+
+splunk::splunk_home: /app/splunk_corpsec
+splunk::splunk_os_user = corpsecuser
+splunk::splunk_bindip = 1234
+splunk::splunk_db_dir = /var/corpsec_db
+
+splunk::auth:
+  authtype: 'LDAP'
+  ldap_binddn: 'myldap_binddn'
+  ldap_binddnpassword: 'myldap_binddnpassword'
+  ldap_groupbasedn: 'myldap_groupbasedn'
+  ldap_sslenabled: 'myldap_sslenabled'
+  ldap_host: 'myldap_host'
+  ldap_userbasedn: 'myldap_userbasedn'
+  saml_idptype: 'mysaml_idptype'
+  saml_idpurl:  'mysaml_idpurl'
+  
+splunk::rolemap:  
+  
   
 #&clustering_attributes:
 #  master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
