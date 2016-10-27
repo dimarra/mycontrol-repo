@@ -11,7 +11,7 @@ splunk::ds:     'ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
 splunk::tcpout: 'ip-172-31-18-136.ap-southeast-2.compute.internal:9997'
 
 
-splunk::sslcompatibility: 'intermediate'
+splunk::sslcompatibility: 'modern'
 splunk::replication_port: 9887
 splunk::pass4symmkey:  cluster_symmkey
 
@@ -33,7 +33,7 @@ splunk::clustering:
   master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
   replication_factor:  4
   search_factor:  3
-  pass4symmkey:  whatever
+
   
 splunk::shclustering:
   shd: ip-172-31-28-232.ap-southeast-2.compute.internal:8089
