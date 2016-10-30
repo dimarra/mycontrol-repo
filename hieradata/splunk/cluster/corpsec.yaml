@@ -30,7 +30,7 @@ splunk::admin:
 # do not indicate the 'mode' in here.  set it in roles yaml.
  
 
-clustering: &clustering_attributes
+clustering_attributes: &clustering_attributes
   pass4symmkey:  corpsec_symmkey_cluster
   cm: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
   master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
