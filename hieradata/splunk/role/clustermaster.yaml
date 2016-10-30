@@ -3,6 +3,11 @@ splunk::type: clustermaster
 
 splunk::clustering:
   mode: master
-  
+  pass4symmkey:  corpsec_symmkey_cluster
+  cm: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
+  master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
+  replication_factor:  4
+  search_factor:  3
+  label: clustering_label  
 #  <<: *clustering_attributes
 
