@@ -7,6 +7,7 @@ backends:
   :datadir: /etc/puppetlabs/code/environments/production/hieradata
 :hierarchy:
   - "%{calling_module}/node/%{hostname}"
+  - "%{calling_module}/application/%{app}"
   - "%{calling_module}/cluster/%{cluster}"
   - "%{calling_module}/role/%{role}"
   - "%{calling_module}/%{operatingsystem}"
