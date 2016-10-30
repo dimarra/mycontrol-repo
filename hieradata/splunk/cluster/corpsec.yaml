@@ -36,7 +36,7 @@ splunk::clustering:
 # do not indicate the 'mode' in here.  set it in roles yaml.
  
 
-&clustering_attributes
+#&clustering_attributes
 
   
 
