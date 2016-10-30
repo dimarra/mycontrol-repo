@@ -11,7 +11,7 @@ splunk::ds:     'ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
 splunk::tcpout: 'ip-172-31-18-136.ap-southeast-2.compute.internal:9997'
 
 
-splunk::sslcompatibility: 'intermediate'
+splunk::sslcompatibility: intermediate
 splunk::replication_port: 9887
 splunk::pass4symmkey:  cluster_symmkey
 
@@ -21,19 +21,23 @@ splunk::pass4symmkey:  cluster_symmkey
   
 splunk::admin:
   fn: 'CorpSec Splunk Admin'
-  email: 'corpsec@shelde.com'
+  email: corpsec@shelde.com
 # use 'openssl passwd -1' to generate a hash   
   hash: '$1$l/4odBwP$fUuCqCL2FodmCb1WmYxAS0'
 
 
-splunk::clustering:
+#splunk::clustering:
 # do not indicate the 'mode' in here.  set it in roles yaml.
+ 
+
+clustering: &clustering_attributes
   pass4symmkey:  corpsec_symmkey_cluster
   cm: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
   master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
   replication_factor:  4
   search_factor:  3
-  label: clustering_label  
+  label: clustering_label   
+  
 
 splunk::searchpeers:
   - ip-172-31-5-237.ap-southeast-2.compute.internal
