@@ -24,8 +24,6 @@ mod 'chocolatey-chocolatey_server', '0.0.5'
 #  :git    => 'https://github.com/puppetlabs/puppetlabs-chocolatey.git',
 #  :branch => 'master'
 
-https://github.com/puppetlabs/puppetlabs-chocolatey.git
-
 # for the stable version
 mod 'jfryman-selinux', '0.4.0'
 
