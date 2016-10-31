@@ -16,9 +16,23 @@ mod "puppetlabs/concat",      '2.2.0'
 #  :git    => 'https://github.com/puppetlabs/puppetlabs-apache',
 #  :branch => 'docs_experiment'
 
-mod 'selinux',
-  :git    => 'https://github.com/voxpupuli/puppet-selinux.git',
-  :branch => 'master'
+mod 'puppetlabs-chocolatey', '2.0.0'
+mod 'chocolatey-chocolatey_server', '0.0.5'
+
+# for the bleeding edge
+#mod 'chocolatey',
+#  :git    => 'https://github.com/puppetlabs/puppetlabs-chocolatey.git',
+#  :branch => 'master'
+
+https://github.com/puppetlabs/puppetlabs-chocolatey.git
+
+# for the stable version
+mod 'jfryman-selinux', '0.4.0'
+
+# for the bleeding edge
+#mod 'selinux',
+#  :git    => 'https://github.com/voxpupuli/puppet-selinux.git',
+#  :branch => 'master'
 
 mod 'splunk',
   :git    => 'https://github.com/dimarra/puppet-splunk.git',
@@ -28,8 +42,21 @@ mod 'cluster_role',
   :git    => 'https://github.com/dimarra/cluster_role.git',
   :branch => 'master'
 
-mod 'cloudera',
-  :git    => 'https://github.com/razorsedge/puppet-cloudera.git',
-  :branch => 'master'
+# for the stable version
+mod 'razorsedge-cloudera', '3.0.0'
+
+# for the bleeding edge
+#mod 'cloudera',
+#  :git    => 'https://github.com/razorsedge/puppet-cloudera.git',
+#  :branch => 'master'
+
+# for the stable version
+mod 'puppetlabs-windows', '3.0.0'
+
+# for the bleeding edge
+#mod 'windows',
+#  :git    => 'https://github.com/puppetlabs/puppetlabs-windows.git',
+#  :branch => 'master'
+
 
   
