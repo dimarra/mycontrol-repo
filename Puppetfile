@@ -48,13 +48,19 @@ mod 'razorsedge-cloudera', '3.0.0'
 #  :git    => 'https://github.com/razorsedge/puppet-cloudera.git',
 #  :branch => 'master'
 
-# for the stable version
+# below are puppetlabs-windows dependencies
 mod 'puppetlabs-windows', '3.0.0'
-
-# for the bleeding edge
-#mod 'windows',
-#  :git    => 'https://github.com/puppetlabs/puppetlabs-windows.git',
-#  :branch => 'master'
+mod 'puppetlabs-acl', '1.1.2'
+mod 'puppetlabs-chocolatey', '2.0.0'
+mod 'puppetlabs-dsc', '1.1.0'
+mod 'puppetlabs-powershell', '2.0.3'
+mod 'puppetlabs-reboot', '1.2.1'
+mod 'puppetlabs-registry', '1.1.3'
+mod 'puppetlabs-wsus_client', '1.0.2'
+mod 'puppet-download_file', '2.0.0'
+mod 'puppet-iis', '2.0.2'
+mod 'badgerious-windows_env', '2.2.2'
+mod 'puppet-windowsfeature', '2.0.0'
 
 
   
