@@ -52,9 +52,9 @@ mod 'razorsedge-cloudera', '3.0.0'
 #mod 'puppetlabs-windows', '3.0.0'
 
 # for the bleeding edge
-mod 'windows',
-  :git    => 'https://github.com/puppetlabs/puppetlabs-windows.git',
-  :branch => 'master'
+#mod 'windows',
+#  :git    => 'https://github.com/puppetlabs/puppetlabs-windows.git',
+#  :branch => 'master'
 
 
   
