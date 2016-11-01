@@ -40,6 +40,10 @@ mod 'cluster_role',
   :git    => 'https://github.com/dimarra/cluster_role.git',
   :branch => 'master'
 
+mod 'chocolatey_misc',
+  :git    => 'https://github.com/dimarra/chocolatey_misc.git',
+  :branch => 'master'
+
 # for the stable version
 mod 'razorsedge-cloudera', '3.0.0'
 
