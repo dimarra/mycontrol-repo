@@ -4,6 +4,6 @@ splunk::type: indexer
 splunk::clustering:
   mode: slave
   pass4symmkey:  corpsec_symmkey_cluster
-  cm: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
+  master: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
   replication_factor:  2
   search_factor:  2
