@@ -6,6 +6,7 @@ forge "http://forge.puppetlabs.com"
 mod "puppetlabs/stdlib",      '4.12.0'
 mod "puppetlabs/concat",      '2.2.0'
 mod 'saz-timezone', '3.3.0'
+mod 'saz-locales', '2.2.2'
 
 # Modules from Git
 # Examples: https://github.com/puppetlabs/r10k/blob/master/doc/puppetfile.mkd#examples
