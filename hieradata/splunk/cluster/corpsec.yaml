@@ -41,8 +41,15 @@ splunk::searchpeers:
   
   
 splunk::shclustering:
+  pass4symmkey:  corpsec_symmkey_cluster
+  master: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
+  master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
+  replication_factor:  1
+  search_factor:  1
   deployer: 'ip-172-31-0-121.ap-southeast-2.compute.internal:8089'
   label: shcluster_label
+  master: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
+  shd:   
 
 # these setting require more testing
 #splunk::splunk_home: /app/splunk_corpsec

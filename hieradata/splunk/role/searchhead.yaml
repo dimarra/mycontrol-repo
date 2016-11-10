@@ -3,8 +3,3 @@ splunk::type: searchhead
 
 splunk::shclustering:
   mode: searchhead
-  pass4symmkey:  corpsec_symmkey_cluster
-  master: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
-  replication_factor:  2
-  label: cluster_label
-  shd: 
