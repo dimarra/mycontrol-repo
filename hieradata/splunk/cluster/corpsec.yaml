@@ -32,7 +32,7 @@ splunk::clustering:
   master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
   replication_factor:  1
   search_factor:  1
-  label: clustering_label   
+  cluster_label: clustering_label   
 # do not indicate the 'mode' in here.  set it in roles yaml.
  
 
@@ -47,7 +47,7 @@ splunk::shclustering:
   replication_factor:  1
   search_factor:  1
   deployer: 'ip-172-31-0-121.ap-southeast-2.compute.internal:8089'
-  label: shcluster_label
+  cluster_label: shcluster_label
   
 
 # these setting require more testing
