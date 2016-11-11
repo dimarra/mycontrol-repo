@@ -46,6 +46,10 @@ mod 'cluster_role',
   :git    => 'https://github.com/dimarra/cluster_role.git',
   :branch => 'master'
 
+mod 'cluster_app',
+  :git    => 'https://github.com/dimarra/cluster_app.git',
+  :branch => 'master'
+
 mod 'chocolatey_misc',
   :git    => 'https://github.com/dimarra/chocolatey_misc.git',
   :branch => 'master'
