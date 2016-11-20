@@ -28,26 +28,27 @@ splunk::admin:
 
 splunk::clustering:
   pass4symmkey:  corpsec_symmkey_cluster
-  master: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
-  master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
+  master_uri: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
   replication_factor:  1
   search_factor:  1
-  cluster_label: clustering_label   
+  cluster_label: corpsec_clustering_label   
 # do not indicate the 'mode' in here.  set it in roles yaml.
  
 
 splunk::searchpeers:
   - ip-172-31-5-237.ap-southeast-2.compute.internal
   
+splunk::searchheads:
+  - ip-172-31-5-225.ap-southeast-2.compute.internal
+
   
 splunk::shclustering:
   pass4symmkey:  corpsec_symmkey_cluster
-  master: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
-  master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
+  master_uri: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
   replication_factor:  1
   search_factor:  1
   deployer: 'ip-172-31-0-121.ap-southeast-2.compute.internal:8089'
-  cluster_label: shcluster_label
+  cluster_label: corpsec_shcluster_label
   
 
 # these setting require more testing
