@@ -40,7 +40,7 @@ mod 'jfryman-selinux', '0.4.0'
 
 mod 'splunk',
   :git    => 'https://github.com/dimarra/puppet-splunk.git',
-  :branch => 'profiles'
+  :branch => 'windows'
 
 mod 'cluster_role',
   :git    => 'https://github.com/dimarra/cluster_role.git',
