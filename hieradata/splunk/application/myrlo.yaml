@@ -4,4 +4,6 @@
 
 splunk::phonehomeintervalinsec: 300
 splunk::inputport: donotapply
+splunk::httpport: donotapply
+splunk::kvstoreport: donotapply
 #splunk::clientname_prefix: pickaname
