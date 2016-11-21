@@ -3,4 +3,4 @@
 
 
 splunk::phonehomeintervalinsec: 300
-splunk::clientname_prefix: pickaname
+#splunk::clientname_prefix: pickaname
