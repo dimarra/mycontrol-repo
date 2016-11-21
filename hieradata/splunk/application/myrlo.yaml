@@ -3,5 +3,5 @@
 
 
 splunk::phonehomeintervalinsec: 300
-splunk::inputport: 'donotapply'
+splunk::inputport: donotapply
 #splunk::clientname_prefix: pickaname
