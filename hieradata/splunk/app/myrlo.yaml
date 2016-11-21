@@ -1,0 +1,5 @@
+
+# All variables in this yaml file applies to nodes with the matching 'app' fact indicated by the the name of this file:
+
+
+splunk::phonehomeintervalinsec: 300
