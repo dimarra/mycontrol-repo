@@ -58,7 +58,7 @@ node default {
       }
     }
     default: {
-      # do windows special here
+      # do something special here
     }  
   } 
 
