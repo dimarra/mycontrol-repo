@@ -13,26 +13,26 @@ splunk::tcpout: 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
 
 # this list the search peers to be used by search heads
 splunk::searchpeers: &searchpeers
-  - 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
-  - 'ip-172-31-7-52.ap-southeast-2.compute.internal:9997'
+  - 'ip-172-31-5-237.ap-southeast-2.compute.internal:8089'
+  - 'ip-172-31-7-52.ap-southeast-2.compute.internal:8089'
 
 # this list the search heads that will be added to the monitoring console (dmc) as peers
 splunk::searchheads: &searchheads
-  - 'ip-172-31-5-225.ap-southeast-2.compute.internal:9997'
-  - 'ip-172-31-8-166.ap-southeast-2.compute.internal:9997'
+  - 'ip-172-31-5-225.ap-southeast-2.compute.internal:8089'
+  - 'ip-172-31-8-166.ap-southeast-2.compute.internal:8089'
 
 # this list the heavy forwarders that will be added to the monitoring console (dmc) as peers
 # and destination for universal forwarders
 splunk::heavyforwarders: &heavyforwarders
-  - 'ip-172-31-7-53.ap-southeast-2.compute.internal'
-
-
+  - 'ip-172-31-7-53.ap-southeast-2.compute.internal:9997'
 
 # this list the indexers to be used by heavy forwarders
-splunk::indexers: *searchpeers
-# or list them below
-#  - ip-172-31-5-237.ap-southeast-2.compute.internal
+splunk::indexers: &indexers
+  - 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
+  - 'ip-172-31-7-52.ap-southeast-2.compute.internal:9997'
 
+splunk::tcpout: 
+  <<: *indexers
 
 #splunk::sslcompatibility: intermediate
 splunk::replication_port: 9887
