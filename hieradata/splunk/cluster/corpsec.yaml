@@ -11,7 +11,21 @@ splunk::deployment_server: 'ip-172-31-6-6.ap-southeast-2.compute.internal:8089'
 splunk::license_master: 'ip-172-31-10-144.ap-southeast-2.compute.internal:8089'
 splunk::tcpout: 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
 
-splunk::sslcompatibility: intermediate
+# this list the search peers to be used by search heads
+splunk::searchpeers: &searchpeers
+  - ip-172-31-5-237.ap-southeast-2.compute.internal
+
+# this list the search heads that will be added to the monitoring console (dmc) as peers
+splunk::searchheads: &searchheads
+  - ip-172-31-5-225.ap-southeast-2.compute.internal
+
+# this list the indexers to be used by heavy forwarders
+splunk::indexers: *searchpeers
+# or list them below
+#  - ip-172-31-5-237.ap-southeast-2.compute.internal
+
+
+#splunk::sslcompatibility: intermediate
 splunk::replication_port: 9887
 splunk::pass4symmkey:  cluster_symmkey
 
@@ -37,14 +51,6 @@ splunk::clustering:
   cluster_label: corpsec_clustering_label   
 # do not indicate the 'mode' in here.  set it in roles yaml.
  
-# this list the search peers to be used by the searchheads
-splunk::searchpeers:
-  - ip-172-31-5-237.ap-southeast-2.compute.internal
-
-# this list the search heads that will be added to the monitoring console (dmc) as peers
-splunk::searchheads:
-  - ip-172-31-5-225.ap-southeast-2.compute.internal
-
 # this section configures the search heads shclustering stanza  
 splunk::shclustering:
   pass4symmkey:  corpsec_symmkey_cluster
@@ -64,16 +70,17 @@ splunk::shclustering:
 # this applies to all nodes of the same cluster fact.  
 splunk::auth:
   authtype: 'LDAP'
-  ldap_binddn: 'myldap_binddn'
-  ldap_binddnpassword: 'myldap_binddnpassword'
-  ldap_groupbasedn: 'myldap_groupbasedn'
-  ldap_sslenabled: 'myldap_sslenabled'
-  ldap_host: 'myldap_host'
-  ldap_userbasedn: 'myldap_userbasedn'
-  saml_idptype: 'mysaml_idptype'
-  saml_idpurl:  'mysaml_idpurl'
+  ldap_binddn: 'aupatssplunkdsa@global.com'
+  ldap_binddnpassword: '$1$hcmjOQ5IAW+UW94t'
+  ldap_groupbasedn: 'OU=Splunk,OU=Application Security,DC=global,DC=com'
+  ldap_sslenabled: true
+  ldap_host: 'global-ldap.lb.apps.com'
+  ldap_userbasedn: 'OU=Corporate,OU=Users,OU=AU,DC=global,DC=com'
+
   
 splunk::rolemap:  
+  admin: 'Global Splunk Admin;Corpsec Splunk Admin'
+  power: 'Power User Group'
   
   
 #&clustering_attributes:
