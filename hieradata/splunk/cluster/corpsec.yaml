@@ -13,18 +13,18 @@ splunk::tcpout: 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
 
 # this list the search peers to be used by search heads
 splunk::searchpeers: &searchpeers
-  - ip-172-31-5-237.ap-southeast-2.compute.internal
-  - ip-172-31-7-52.ap-southeast-2.compute.internal
+  - 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
+  - 'ip-172-31-7-52.ap-southeast-2.compute.internal:9997'
 
 # this list the search heads that will be added to the monitoring console (dmc) as peers
 splunk::searchheads: &searchheads
-  - ip-172-31-5-225.ap-southeast-2.compute.internal
-  - ip-172-31-8-166.ap-southeast-2.compute.internal
+  - 'ip-172-31-5-225.ap-southeast-2.compute.internal:9997'
+  - 'ip-172-31-8-166.ap-southeast-2.compute.internal:9997'
 
 # this list the heavy forwarders that will be added to the monitoring console (dmc) as peers
 # and destination for universal forwarders
 splunk::heavyforwarders: &heavyforwarders
-  - ip-172-31-7-53.ap-southeast-2.compute.internal
+  - 'ip-172-31-7-53.ap-southeast-2.compute.internal'
 
 
 
