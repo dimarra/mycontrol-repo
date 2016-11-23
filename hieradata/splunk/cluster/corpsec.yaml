@@ -31,8 +31,8 @@ splunk::indexers: &indexers
   - 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
   - 'ip-172-31-7-52.ap-southeast-2.compute.internal:9997'
 
-splunk::tcpout: 
-  <<: *indexers
+# indicate the indexers as the default tcpout for the cluster
+splunk::tcpout: *indexers
 
 #splunk::sslcompatibility: intermediate
 splunk::replication_port: 9887
