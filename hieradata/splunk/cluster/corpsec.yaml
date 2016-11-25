@@ -86,6 +86,7 @@ splunk::auth:
   ldap_host: 'global-ldap.lb.apps.com'
   ldap_userbasedn: 'OU=Corporate,OU=Users,OU=AU,DC=global,DC=com'
   ldap_usernameattribute: 'samaccountname'
+  ldap_realnameattribute: 'cn'
 
   
 splunk::rolemap:  
