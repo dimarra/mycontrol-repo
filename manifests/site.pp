@@ -46,7 +46,7 @@ node default {
 
   
       class { 'timezone':
-        timezone => $timezone,
+        timezone => 'Australia/Melbourne',
       }
   
       class { 'locales':
