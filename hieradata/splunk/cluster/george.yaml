@@ -1,0 +1,104 @@
+#
+# This cluster configuration yaml supercedes setting configured in the roles configuration yaml.
+# The setting indicated here are applied to all members nodes indicated with the cluster fact.
+# 
+#
+
+# All variables in this cluster yaml file indicates the following:
+# he common <name of parameter here> for members of the cluster
+
+splunk::deployment_server: 'ip-172-31-31-249.ap-southeast-2.compute.internal:8089'
+splunk::license_master: 'ip-172-31-31-250.ap-southeast-2.compute.internal:8089'
+splunk::tcpout: 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
+
+# this list the search peers to be used by search heads
+splunk::searchpeers: &searchpeers
+  - 'ip-172-31-31-248.ap-southeast-2.compute.internal:8089'
+#  - 'ip-172-31-7-52.ap-southeast-2.compute.internal:8089'
+
+# this list the search heads that will be added to the monitoring console (dmc) as peers
+splunk::searchheads: &searchheads
+  - 'ip-172-31-23-122.ap-southeast-2.compute.internal:8089'
+#  - 'ip-172-31-8-166.ap-southeast-2.compute.internal:8089'
+
+# this list the heavy forwarders that will be added to the monitoring console (dmc) as peers
+# and destination for universal forwarders
+splunk::heavyforwarders: &heavyforwarders
+  - 'ip-172-31-7-53.ap-southeast-2.compute.internal:9997'
+
+# this list the indexers to be used by heavy forwarders
+splunk::indexers: &indexers
+  - 'ip-172-31-31-248.ap-southeast-2.compute.internal:9997'
+  - 'ip-172-31-7-52.ap-southeast-2.compute.internal:9997'
+
+# indicate the indexers as the default tcpout for the cluster
+splunk::tcpout: *indexers
+
+#splunk::sslcompatibility: intermediate
+splunk::replication_port: 9887
+splunk::pass4symmkey:  cluster_symmkey
+
+#splunk::service:
+#  enable: true
+#  ensure: running
+
+# this section configures the default admin account with non-default credentials
+# this applies to all nodes of the same cluster fact.  
+splunk::admin:
+  fn: 'CorpSec Splunk Admin'
+  email: corpsec@shelde.com
+# use 'openssl passwd -1' to generate a hash   
+  hash: '$1$l/4odBwP$fUuCqCL2FodmCb1WmYxAS0'
+
+
+# this section configures the search peers clustering stanza
+splunk::clustering:
+  pass4symmkey:  corpsec_symmkey_cluster
+  master_uri: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
+  replication_factor:  1
+  search_factor:  1
+  cluster_label: corpsec_clustering_label   
+# do not indicate the 'mode' in here.  set it in roles yaml.
+ 
+# this section configures the search heads shclustering stanza  
+splunk::shclustering:
+  pass4symmkey:  corpsec_symmkey_cluster
+  master_uri: 'ip-172-31-5-86.ap-southeast-2.compute.internal:8089'
+  replication_factor:  1
+  search_factor:  1
+  deployer: 'ip-172-31-0-121.ap-southeast-2.compute.internal:8089'
+  cluster_label: corpsec_shcluster_label
+
+
+# these setting require more testing
+#splunk::splunk_home: /app/splunk_corpsec
+#splunk::splunk_os_user: corpsecuser
+#splunk::splunk_db_dir: /var/corpsec_db
+
+# this section configures the defauly authentication and authorization settings
+# this applies to all nodes of the same cluster fact.  
+splunk::auth:
+  authtype: 'LDAP'
+  ldap_binddn: 'aupatssplunkdsa@global.com'
+  ldap_binddnpassword: '$1$hcmjOQ5IAW+UW94t'
+  ldap_groupbasedn: 'OU=Splunk,OU=Application Security,DC=global,DC=com'
+  ldap_sslenabled: true
+  ldap_host: 'global-ldap.lb.apps.com'
+  ldap_userbasedn: 'OU=Corporate,OU=Users,OU=AU,DC=global,DC=com'
+  ldap_usernameattribute: 'samaccountname'
+  ldap_realnameattribute: 'cn'
+
+  
+splunk::rolemap:  
+  admin: 'Global Splunk Admin;Corpsec Splunk Admin'
+  power: 'Power User Group'
+  
+  
+#&clustering_attributes:
+#  master_uri: 'https://ip-172-31-28-232.ap-southeast-2.compute.internal:8089'
+#  replication_factor:  4
+#  search_factor:  3
+#  pass4symmkey:  whatever
+
+
+
