@@ -3,14 +3,14 @@
 # The setting indicated here are applied to all members nodes indicated with the cluster fact.
 # 
 #
-
 # All variables in this cluster yaml file indicates the following:
 # he common <name of parameter here> for members of the cluster
 
-splunk::deployment_server: 'ip-172-31-31-249.ap-southeast-2.compute.internal:8089'
+splunk::license_master: &license_master 'ip-172-31-31-250.ap-southeast-2.compute.internal:8089'
 splunk::cluster_master: &cluster_master 'ip-172-31-25-63.ap-southeast-2.compute.internal:8089'
-splunk::deployer: &deployer *cluster_master
-#splunk::deployment_server: 'ip-172-31-31-249.ap-southeast-2.compute.internal:8089'
+splunk::deployer: 'ip-172-31-25-63.ap-southeast-2.compute.internal:8089'
+splunk::deployment_server: 'ip-172-31-31-249.ap-southeast-2.compute.internal:8089'
+
 
 # this list the search heads that will be added to the monitoring console (dmc) as peers
 splunk::searchheads: &searchheads
@@ -60,7 +60,7 @@ splunk::shclustering:
   master_uri: *cluster_master
   replication_factor:  *replication_factor
   search_factor:  *search_factor
-  deployer: *deployer
+  deployer: *cluster_master
   cluster_label: '%{cluster_name}_searchhead_label'
 # do not indicate the 'mode' in here.  set it in roles yaml.
 
