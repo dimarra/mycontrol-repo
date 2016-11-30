@@ -7,7 +7,7 @@
 # All variables in this cluster yaml file indicates the following:
 # he common <name of parameter here> for members of the cluster
 
-splunk::license_master: &license_master 'ip-172-31-31-250.ap-southeast-2.compute.internal:8089'
+splunk::license_master: &license_master "ip-172-31-31-250.ap-southeast-2.compute.internal:8089"
 splunk::cluster_master: &cluster_master 'ip-172-31-25-63.ap-southeast-2.compute.internal:8089'
 splunk::deployer: &deployer *cluster_master
 splunk::deployment_server: 'ip-172-31-31-249.ap-southeast-2.compute.internal:8089'
