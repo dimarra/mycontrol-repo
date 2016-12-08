@@ -47,8 +47,8 @@ splunk::pass4symmkey:  cluster_symmkey
 # this section configures the default admin account with non-default credentials
 # this applies to all nodes of the same cluster fact.  
 splunk::admin:
-  fn: 'CorpSec Splunk Admin'
-  email: corpsec@shelde.com
+  fn: 'George Splunk Admin'
+  email: george@shelde.com
 # use 'openssl passwd -1' to generate a hash   
   hash: '$1$l/4odBwP$fUuCqCL2FodmCb1WmYxAS0'
 
@@ -69,7 +69,7 @@ splunk::shclustering:
   replication_factor:  1
   search_factor:  1
   deployer: 'ip-172-31-0-121.ap-southeast-2.compute.internal:8089'
-  cluster_label: corpsec_shcluster_label
+  cluster_label: george_shcluster_label
 
 
 # these setting require more testing
