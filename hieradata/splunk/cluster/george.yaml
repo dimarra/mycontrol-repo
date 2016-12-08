@@ -26,7 +26,7 @@ splunk::searchheads: &searchheads
 # this list the heavy forwarders that will be added to the monitoring console (dmc) as peers
 # and destination for universal forwarders
 splunk::heavyforwarders: &heavyforwarders
-  - 'ip-172-31-7-53.ap-southeast-2.compute.internal:9997'
+  - 'ip-172-31-31-248.ap-southeast-2.compute.internal:9997'
 
 # this list the indexers to be used by heavy forwarders
 splunk::indexers: &indexers
