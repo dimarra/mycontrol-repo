@@ -7,6 +7,8 @@
 # All variables in this cluster yaml file indicates the following:
 # he common <name of parameter here> for members of the cluster
 
+# TODO: create descriptins to relate the variables below to splunk attributes
+
 splunk::deployment_server: 'ip-172-31-31-249.ap-southeast-2.compute.internal:8089'
 splunk::license_master: 'ip-172-31-31-250.ap-southeast-2.compute.internal:8089'
 splunk::tcpout: 'ip-172-31-5-237.ap-southeast-2.compute.internal:9997'
